@@ -1,19 +1,31 @@
 package converter;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import io.github.millij.poi.SpreadsheetReadException;
+import io.github.millij.poi.ss.reader.SpreadsheetReader;
+import io.github.millij.poi.ss.reader.XlsReader;
+import io.github.millij.poi.ss.reader.XlsxReader;
+import mapper.FeatureMapper;
+import model.Constant;
 import model.XLSRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.FormulaEvaluator;
-import org.apache.poi.ss.usermodel.Row;
+import model.output.CRS;
+import model.output.Feature;
+import model.output.GeoJsonObject;
+import org.mapstruct.factory.Mappers;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class XlsToGeoJsonHandler {
     private String sourcePath;
-    private static final String FILE_NAME  = "source.xls";
+    private String targetPath;
+    private static final String SOURCE_FILE_NAME = "source-origin.xlsx";
+    private static final String TARGET_FILE_NAME = "target.geojson";
+
+    private FeatureMapper mapper;
 
     public XlsToGeoJsonHandler(String sourcePath) {
         this.sourcePath = sourcePath;
@@ -21,6 +33,8 @@ public class XlsToGeoJsonHandler {
 
     public XlsToGeoJsonHandler() {
         this.sourcePath = getStaticSourceFilePath();
+        this.targetPath = getStaticTargetFilePath();
+        this.mapper = Mappers.getMapper(FeatureMapper.class);
     }
 
     private String getStaticSourceFilePath() {
@@ -37,40 +51,79 @@ public class XlsToGeoJsonHandler {
                 .append(File.separator)
                 .append("source")
                 .append(File.separator)
-                .append(FILE_NAME)
+                .append(SOURCE_FILE_NAME)
                 .toString();
 
         return sourcePath;
     }
 
-    public void process() throws IOException {
-        FileInputStream fis = new FileInputStream(new File(sourcePath));
-        HSSFWorkbook workbook = new HSSFWorkbook(fis);
-        HSSFSheet sheet = workbook.getSheetAt(0);
+    private String getStaticTargetFilePath() {
+        String targetPath = System.getProperty("user.dir"); //get the absolute url of the project root
+        targetPath = (new StringBuilder(targetPath))
+                .append(File.separator)
+                .append("back-end")
+                .append(File.separator)
+                .append("src")
+                .append(File.separator)
+                .append("main")
+                .append(File.separator)
+                .append("resources")
+                .append(File.separator)
+                .append("target")
+                .append(File.separator)
+                .append(TARGET_FILE_NAME)
+                .toString();
 
-        FormulaEvaluator formulaEvaluator = workbook.getCreationHelper().createFormulaEvaluator();
-
-        for (Row row : sheet) {
-            XLSRow pointVNF = getPointFromRow(row, formulaEvaluator);
-
-            System.out.println(pointVNF);
-        }
+        return targetPath;
     }
 
-    private XLSRow getPointFromRow(Row row, FormulaEvaluator formulaEvaluator) {
-        XLSRow pointVnf = new XLSRow();
+    public void process() throws IOException, SpreadsheetReadException {
+        SpreadsheetReader sheetReader = getSpreadsheetReader();
+        File file = new File(sourcePath);
+        List<XLSRow> rowList = sheetReader.read(XLSRow.class, file);
 
-        for (Cell cell : row) {
-            switch (formulaEvaluator.evaluateInCell(cell).getCellTypeEnum()) {
-                case NUMERIC:
-                    System.out.println("[num] " + cell.getNumericCellValue() + "\t\t");
-                    break;
-                case STRING:
-                    System.out.println("[str] " + cell.getStringCellValue() + "\t\t");
-                    break;
-            }
+        GeoJsonObject resultObject = preparerResultObject(rowList);
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.enable(SerializationFeature.INDENT_OUTPUT); //beautify output
+        objectMapper.writeValue(new File(targetPath), resultObject);
+    }
+
+    private SpreadsheetReader getSpreadsheetReader() {
+        SpreadsheetReader sheetReader;
+        if (SOURCE_FILE_NAME.endsWith(".xlsx")) {
+            sheetReader = new XlsxReader();
+        } else {
+            sheetReader = new XlsReader();
+        }
+        return sheetReader;
+    }
+
+    private GeoJsonObject preparerResultObject(List<XLSRow> rowList) {
+        GeoJsonObject result = new GeoJsonObject();
+
+        result.setType(Constant.RESULT_TYPE_DEFAULT_VALUE);
+        result.setName(Constant.RESULT_NAME_DEFAULT_VALUE);
+        result.setCrs(preparerResultCRS());
+        result.setFeatures(preparerResultFeatures(rowList));
+
+        return result;
+    }
+
+    private List<Feature> preparerResultFeatures(List<XLSRow> rowList) {
+        List<Feature> featureList = new ArrayList<>();
+        Feature feature;
+
+        for (XLSRow row : rowList) {
+            feature = mapper.xlsRowToFeature(row);
+            featureList.add(feature);
         }
 
-        return pointVnf;
+        return featureList;
+    }
+
+    private CRS preparerResultCRS() {
+        CRS crs = new CRS();
+        return crs;
     }
 }

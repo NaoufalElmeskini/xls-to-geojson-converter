@@ -2,7 +2,6 @@ package application;
 
 import converter.XlsToGeoJsonHandler;
 
-import java.io.File;
 import java.io.IOException;
 
 public class Main {

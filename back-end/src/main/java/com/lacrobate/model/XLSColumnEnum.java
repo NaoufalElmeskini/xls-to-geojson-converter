@@ -1,4 +1,4 @@
-package model;
+package com.lacrobate.model;
 
 public enum XLSColumnEnum {
     ID_AGHYRE,
@@ -16,5 +16,5 @@ public enum XLSColumnEnum {
     LATITUDE,
     L93_X,
     L93_Y,
-    TYPE_CAPTEUR;
+    TYPE_CAPTEUR
 }

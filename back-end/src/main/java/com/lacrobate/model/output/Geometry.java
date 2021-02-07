@@ -1,4 +1,4 @@
-package model.output;
+package com.lacrobate.model.output;
 
 public class Geometry {
     private String type;

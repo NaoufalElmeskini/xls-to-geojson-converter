@@ -1,39 +1,62 @@
-package model.output;
+package com.lacrobate.model;
 
-public class Properties {
+import io.github.millij.poi.ss.model.annotations.Sheet;
+import io.github.millij.poi.ss.model.annotations.SheetColumn;
+
+@Sheet
+public class XLSRow {
+
+    @SheetColumn("ID_AGHYRE")
     private Integer id_aghyre;
 
+    @SheetColumn("ID_EXTERNE")
     private String id_externe;
 
+    @SheetColumn("SOURCE")
     private String source;
 
+    @SheetColumn("NOM_SITE")
     private String nom_site;
 
+    @SheetColumn("NOM_LONG_STATION")
     private String nom_long_station;
 
+    @SheetColumn("NOM_CAPTEUR")
     private String nom_capteur;
 
+    @SheetColumn("NOM_RUBRIQUE")
     private String nom_rubrique;
 
+    @SheetColumn("TYPE_GRANDEUR")
     private String type_grandeur;
 
+    @SheetColumn("DECLENCHEMENT")
     private String declenchement;
 
+    @SheetColumn("PK")
     private Float pk;
 
+    @SheetColumn("TYPE_COORDONNEES")
     private String type_coordonnees;
 
+    @SheetColumn("LONGITUDE")
     private Float longitude;
 
+    @SheetColumn("LATITUDE")
     private Float latitude;
 
+    @SheetColumn("L93_X")
     private Float l93_x;
 
+    @SheetColumn("L93_Y")
     private Float l93_y;
 
+    @SheetColumn("TYPE_CAPTEUR")
     private String type_capteur;
 
-    public Properties() {}
+
+    public XLSRow() {
+    }
 
     public Integer getId_aghyre() {
         return id_aghyre;
@@ -165,7 +188,7 @@ public class Properties {
 
     @Override
     public String toString() {
-        return "Properties{" +
+        return "XLSRow{" +
                 "id_aghyre=" + id_aghyre +
                 ", id_externe='" + id_externe + '\'' +
                 ", source='" + source + '\'' +

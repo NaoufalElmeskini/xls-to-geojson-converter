@@ -1,16 +1,16 @@
-package model.output;
+package com.lacrobate.model.output;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GeoJsonObject {
+public class GeoJsonResult {
     private String type;
     private String name;
 
     private CRS crs;
     private List<Feature> features;
 
-    public GeoJsonObject() {
+    public GeoJsonResult() {
     }
 
     public String getType() {

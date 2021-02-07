@@ -1,4 +1,4 @@
-package model;
+package com.lacrobate.model;
 
 public class Constant {
     public final static String FEATURE_TYPE_DEFAULT_VALUE = "Feature";

@@ -1,4 +1,4 @@
-package model.output;
+package com.lacrobate.model.output;
 
 public class Feature {
     private String type;

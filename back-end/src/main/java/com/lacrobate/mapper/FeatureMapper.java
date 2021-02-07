@@ -1,20 +1,15 @@
-package mapper;
+package com.lacrobate.mapper;
 
-import model.Constant;
-import model.GeometryTypeEnum;
-import model.XLSRow;
-import model.output.Feature;
-import model.output.GeoJsonObject;
-import model.output.Geometry;
-import model.output.Properties;
+import com.lacrobate.model.Constant;
+import com.lacrobate.model.output.GeometryTypeEnum;
+import com.lacrobate.model.XLSRow;
+import com.lacrobate.model.output.Feature;
+import com.lacrobate.model.output.Geometry;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 
-import java.util.ArrayList;
-import java.util.List;
-
-@Mapper
+@Mapper(componentModel = "spring")
 public interface FeatureMapper {
 
     @Mapping(source = "row", target = "type", qualifiedByName = "featureTypeQualifier")

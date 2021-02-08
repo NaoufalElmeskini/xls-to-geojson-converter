@@ -31,8 +31,9 @@ public class XlsToGeoJsonHandler {
     public XlsToGeoJsonHandler() {
         this.sourcePath = ConverterUtils.getAbsoluteSourceFilePath(SOURCE_FILE_NAME);
         this.targetPath = ConverterUtils.getAbsoluteTargetFilePath(TARGET_FILE_NAME);
-//        this.mapper = Mappers.getMapper(FeatureMapper.class);
     }
+
+
 
     public void process() throws IOException, SpreadsheetReadException {
         SpreadsheetReader sheetReader = ConverterUtils.getSpreadsheetReader(SOURCE_FILE_NAME);

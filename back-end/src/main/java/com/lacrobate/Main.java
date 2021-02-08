@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.io.IOException;
 
 @SpringBootApplication
-public class Main implements CommandLineRunner {
+public class Main implements CommandLineRunner{
     @Autowired
     private XlsToGeoJsonHandler converter;
 
@@ -19,9 +19,18 @@ public class Main implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws IOException, SpreadsheetReadException {
-        System.out.println("conversion: starting...");
-        converter.process();
-        System.out.println("conversion: success.");
+    public void run(String... args) {
+        try {
+            System.out.println(args.length);
+            System.out.println("conversion: starting...");
+            converter.process();
+            System.out.println("conversion: success.");
+        } catch (IOException e) {
+            System.err.println("Erreur lors d'ouverture de fichier...");
+            e.printStackTrace();
+        } catch (SpreadsheetReadException e) {
+            System.err.println("Erreur lors de manipulation du fichier source...");
+            e.printStackTrace();
+        }
     }
 }

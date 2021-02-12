@@ -1,10 +1,10 @@
 package com.lacrobate.mapper;
 
 import com.lacrobate.model.Constant;
-import com.lacrobate.model.output.GeometryTypeEnum;
+import com.lacrobate.model.output.geojson.GeometryTypeEnum;
 import com.lacrobate.model.XLSRow;
-import com.lacrobate.model.output.Feature;
-import com.lacrobate.model.output.Geometry;
+import com.lacrobate.model.output.geojson.Feature;
+import com.lacrobate.model.output.common.Geometry;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;

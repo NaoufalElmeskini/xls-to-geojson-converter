@@ -1,16 +1,25 @@
 package com.lacrobate;
 
+import com.lacrobate.config.AppConfig;
 import com.lacrobate.converter.XlsToGeoJsonHandler;
+import com.lacrobate.converter.XlsToUmapHandler;
+import com.lacrobate.utils.Profile;
 import io.github.millij.poi.SpreadsheetReadException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.core.env.AbstractEnvironment;
 
 import java.io.IOException;
 
 @SpringBootApplication
 public class Main implements CommandLineRunner{
+    private Logger log = LoggerFactory.getLogger(Main.class);
     @Autowired
     private XlsToGeoJsonHandler converter;
 
@@ -20,17 +29,9 @@ public class Main implements CommandLineRunner{
 
     @Override
     public void run(String... args) {
-        try {
-            System.out.println(args.length);
-            System.out.println("conversion: starting...");
-            converter.process();
-            System.out.println("conversion: success.");
-        } catch (IOException e) {
-            System.err.println("Erreur lors d'ouverture de fichier...");
-            e.printStackTrace();
-        } catch (SpreadsheetReadException e) {
-            System.err.println("Erreur lors de manipulation du fichier source...");
-            e.printStackTrace();
-        }
+
+        log.info("conversion: starting...\n");
+        converter.process();
+        log.info("\nconversion: success.");
     }
 }

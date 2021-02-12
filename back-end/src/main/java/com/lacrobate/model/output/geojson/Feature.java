@@ -1,4 +1,6 @@
-package com.lacrobate.model.output;
+package com.lacrobate.model.output.geojson;
+
+import com.lacrobate.model.output.common.Geometry;
 
 public class Feature {
     private String type;

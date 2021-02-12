@@ -1,7 +1,6 @@
 package com.lacrobate.controller;
 
-import com.lacrobate.converter.ConverterUtils;
-import com.lacrobate.model.output.GeoJsonResult;
+import com.lacrobate.utils.ConverterUtils;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;

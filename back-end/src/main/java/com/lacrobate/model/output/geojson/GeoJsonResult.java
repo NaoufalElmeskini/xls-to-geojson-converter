@@ -1,4 +1,4 @@
-package com.lacrobate.model.output;
+package com.lacrobate.model.output.geojson;
 
 import java.util.ArrayList;
 import java.util.List;

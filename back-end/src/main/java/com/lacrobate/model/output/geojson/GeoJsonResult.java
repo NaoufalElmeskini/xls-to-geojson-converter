@@ -1,5 +1,7 @@
 package com.lacrobate.model.output.geojson;
 
+import com.lacrobate.model.output.common.Feature;
+
 import java.util.ArrayList;
 import java.util.List;
 

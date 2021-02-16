@@ -1,4 +1,4 @@
-package com.lacrobate.model.output.geojson;
+package com.lacrobate.model.output.common;
 
 public enum GeometryTypeEnum {
     Point

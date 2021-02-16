@@ -1,6 +1,7 @@
-package com.lacrobate.model.output.geojson;
+package com.lacrobate.model.output.common;
 
 import com.lacrobate.model.output.common.Geometry;
+import com.lacrobate.model.output.geojson.Properties;
 
 public class Feature {
     private String type;

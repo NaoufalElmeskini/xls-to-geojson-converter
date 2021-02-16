@@ -1,14 +1,14 @@
 package com.lacrobate.mapper;
 
 import com.lacrobate.model.XLSRow;
-import com.lacrobate.model.output.geojson.Feature;
+import com.lacrobate.model.output.common.Feature;
 import com.lacrobate.model.output.geojson.Properties;
 import javax.annotation.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-02-12T12:55:55+0100",
+    date = "2021-02-12T17:41:51+0100",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 1.8.0_282 (AdoptOpenJDK)"
 )
 @Component

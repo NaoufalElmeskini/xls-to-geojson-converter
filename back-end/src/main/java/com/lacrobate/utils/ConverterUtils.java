@@ -9,15 +9,15 @@ import io.github.millij.poi.ss.reader.XlsxReader;
 
 public class ConverterUtils {
     public static final String DEFAULT_SOURCE_FILE_NAME = "source.xls";
-    public static final String DEFAULT_TARGET_FILE_NAME = "target.geojson";
+    public static final String DEFAULT_TARGET_FILE_NAME = "target";
 
     private static final String ABSOLUTE_SOURCE_DIR_PATH = "C:\\Users\\naoufal\\Documents\\convertisseur\\source\\";
     private static final String ABSOLUTE_TARGET_DIR_PATH = "C:\\Users\\naoufal\\Documents\\convertisseur\\target\\";
 
 
-    public static SpreadsheetReader getSpreadsheetReader(String sourceFileName) {
+    public static SpreadsheetReader getSpreadsheetReader() {
         SpreadsheetReader sheetReader;
-        if (sourceFileName.endsWith(".xlsx")) {
+        if (DEFAULT_SOURCE_FILE_NAME.endsWith(".xlsx")) {
             sheetReader = new XlsxReader();
         } else {
             sheetReader = new XlsReader();

@@ -7,7 +7,7 @@
     <groupId>com.talan</groupId>
     <artifactId>xls-to-geojson-converter</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>2.0-SNAPSHOT</version>
     <modules>
         <module>back-end</module>
     </modules>

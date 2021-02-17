@@ -46,4 +46,20 @@ public class UmapOptions {
     public void setIconClass(String iconClass) {
         this.iconClass = iconClass;
     }
+
+    public boolean isDisplayOnLoad() {
+        return displayOnLoad;
+    }
+
+    public void setDisplayOnLoad(boolean displayOnLoad) {
+        this.displayOnLoad = displayOnLoad;
+    }
+
+    public boolean isBrowsable() {
+        return browsable;
+    }
+
+    public void setBrowsable(boolean browsable) {
+        this.browsable = browsable;
+    }
 }

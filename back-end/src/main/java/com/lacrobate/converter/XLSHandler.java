@@ -29,33 +29,32 @@ public abstract class XLSHandler {
 
 
     public void process() {
-        List<XLSRow> rowList = getXlsRowList();
-
-        Object resultObject = createResultObjectFrom(rowList);
-
-        writeJsonFileFrom(resultObject);
-    }
-
-    protected List<XLSRow> getXlsRowList() {
         try {
-            String sourcePath = appConfig.getSourcePath();
-            SpreadsheetReader sheetReader = ConverterUtils.getSpreadsheetReader();
-            File file = new File(sourcePath);
-            List<XLSRow> rowList = null;
-            rowList = sheetReader.read(XLSRow.class, file);
-            return rowList;
+            List<XLSRow> rowList = getXlsRowList();
+            Object resultObject = createResultObjectFrom(rowList);
+            writeJsonFileFrom(resultObject);
         } catch (SpreadsheetReadException e) {
             e.printStackTrace();
-            return null;
+            log.error("veuillez vous assurer que le fichier source est bien present dans l'emplacement source");
+            log.error("Emplacement source : " + appConfig.getSourcePath());
         }
+    }
+
+    protected List<XLSRow> getXlsRowList() throws SpreadsheetReadException {
+        String sourcePath = appConfig.getSourcePath();
+        SpreadsheetReader sheetReader = ConverterUtils.getSpreadsheetReader();
+        File file = new File(sourcePath);
+        List<XLSRow> rowList = null;
+        rowList = sheetReader.read(XLSRow.class, file);
+        return rowList;
     }
 
     protected void writeJsonFileFrom(Object resultObject) {
         ObjectMapper objectMapper = getDecoratedObjectMapper();
         try {
             String targetPath = appConfig.getTargetPath() + TARGET_FILE_EXTENSION;
-            log.info("writing json object in file: " + targetPath);
             objectMapper.writeValue(new File(targetPath), resultObject);
+            log.info("Umap file generated in: " + targetPath);
         } catch (IOException e) {
             log.error("error while writing json to file");
             e.printStackTrace();

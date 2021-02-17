@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Component
 public class XlsToUmapHandler extends XLSHandler {
@@ -26,8 +27,10 @@ public class XlsToUmapHandler extends XLSHandler {
 
         preparerHeaders(result);
         Map<String, Layer> layerMap = createLayerMapFrom(rowList);
+        if(layerMap != null) {
+            result.setLayers(new ArrayList<>(layerMap.values()));
+        }
 
-        result.setLayers(new ArrayList<>(layerMap.values()));
         log.info("json object construction finished: ");
         log.info(result.toString());
 
@@ -35,6 +38,9 @@ public class XlsToUmapHandler extends XLSHandler {
     }
 
     private Map<String, Layer> createLayerMapFrom(List<XLSRow> rowList) {
+        if (rowList == null) {
+            return null;
+        }
         HashMap<String, Layer> layerMap = new HashMap<>();
 
         for (XLSRow row: rowList) {
@@ -53,6 +59,8 @@ public class XlsToUmapHandler extends XLSHandler {
      * @param layerMap
      */
     private void addCountToLayerNames(HashMap<String, Layer> layerMap) {
+        AtomicInteger atomicInteger = new AtomicInteger();
+
         for (Layer layer: layerMap.values()) {
             UmapOptions umap_options = layer.get_umap_options();
 
@@ -61,6 +69,9 @@ public class XlsToUmapHandler extends XLSHandler {
 
             umap_options.setColor(ColorEnum.getRandomColor());
             umap_options.setIconClass(IconClassEnum.getRandomIconClass());
+
+            int newId = atomicInteger.incrementAndGet();
+            umap_options.setId(newId);
         }
     }
 

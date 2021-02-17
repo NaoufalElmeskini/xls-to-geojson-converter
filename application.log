@@ -1,54 +1,193 @@
-2021-02-16 09:04:56.212  INFO 2864 --- [main] com.lacrobate.Main                       : Starting Main using Java 1.8.0_282 on TAL-50WVJR2 with PID 2864 (C:\Users\naoufal\Documents\projects\xls-to-geojson-converter\back-end\target\classes started by naoufal in C:\Users\naoufal\Documents\projects\xls-to-geojson-converter)
-2021-02-16 09:04:56.228  INFO 2864 --- [main] com.lacrobate.Main                       : The following profiles are active: DEV
-2021-02-16 09:04:58.794  INFO 2864 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-02-16 09:04:58.813  INFO 2864 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-02-16 09:04:58.814  INFO 2864 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
-2021-02-16 09:04:58.945  INFO 2864 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-02-16 09:04:58.945  INFO 2864 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2595 ms
-2021-02-16 09:04:59.220  INFO 2864 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-02-16 09:04:59.504  INFO 2864 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-02-16 09:04:59.517  INFO 2864 --- [main] com.lacrobate.Main                       : Started Main in 4.247 seconds (JVM running for 4.792)
-2021-02-16 09:04:59.520  INFO 2864 --- [main] com.lacrobate.Main                       : conversion: starting...
+2021-02-17 09:43:15.574  INFO 3692 --- [main] com.lacrobate.Main                       : Starting Main using Java 1.8.0_282 on TAL-50WVJR2 with PID 3692 (C:\Users\naoufal\Documents\projects\xls-to-geojson-converter\back-end\target\classes started by naoufal in C:\Users\naoufal\Documents\projects\xls-to-geojson-converter)
+2021-02-17 09:43:15.591  INFO 3692 --- [main] com.lacrobate.Main                       : The following profiles are active: DEV
+2021-02-17 09:43:17.769  INFO 3692 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-17 09:43:17.786  INFO 3692 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-17 09:43:17.787  INFO 3692 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-17 09:43:18.657  INFO 3692 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-17 09:43:18.657  INFO 3692 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2961 ms
+2021-02-17 09:43:18.961  INFO 3692 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-17 09:43:19.264  INFO 3692 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-17 09:43:19.279  INFO 3692 --- [main] com.lacrobate.Main                       : Started Main in 4.342 seconds (JVM running for 4.954)
+2021-02-17 09:43:19.282  INFO 3692 --- [main] com.lacrobate.Main                       : conversion: starting...
 
-2021-02-16 09:04:59.905  INFO 2864 --- [main] io.github.millij.poi.util.Spreadsheet    : Bean property to Excel Column of - class com.lacrobate.model.XLSRow : {nom_rubrique=NOM_RUBRIQUE, latitude=LATITUDE, nom_long_station=NOM_LONG_STATION, source=SOURCE, l93_y=L93_Y, type_capteur=TYPE_CAPTEUR, nom_capteur=NOM_CAPTEUR, l93_x=L93_X, id_externe=ID_EXTERNE, id_aghyre=ID_AGHYRE, pk=PK, tring=tring, type_coordonnees=TYPE_COORDONNEES, type_grandeur=TYPE_GRANDEUR, declenchement=DECLENCHEMENT, nom_site=NOM_SITE, longitude=LONGITUDE}
-2021-02-16 09:04:59.908  INFO 2864 --- [main] io.github.millij.poi.util.Spreadsheet    : Excel Column to property map of - class com.lacrobate.model.XLSRow : {ID_EXTERNE=id_externe, TYPE_CAPTEUR=type_capteur, LONGITUDE=longitude, L93_Y=l93_y, TYPE_GRANDEUR=type_grandeur, NOM_LONG_STATION=nom_long_station, TYPE_COORDONNEES=type_coordonnees, NOM_SITE=nom_site, NOM_CAPTEUR=nom_capteur, L93_X=l93_x, ID_AGHYRE=id_aghyre, SOURCE=source, NOM_RUBRIQUE=nom_rubrique, PK=pk, tring=tring, LATITUDE=latitude, DECLENCHEMENT=declenchement}
-2021-02-16 09:05:00.264  INFO 2864 --- [main] com.lacrobate.Main                       : 
+2021-02-17 09:43:19.289  INFO 3692 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-02-17 09:43:19.337 ERROR 3692 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:807) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:788) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:333) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) [spring-boot-2.4.2.jar:2.4.2]
+	at com.lacrobate.Main.main(Main.java:20) [classes/:na]
+Caused by: java.lang.NullPointerException: null
+	at com.lacrobate.converter.XlsToUmapHandler.createLayerMapFrom(XlsToUmapHandler.java:41) ~[classes/:na]
+	at com.lacrobate.converter.XlsToUmapHandler.createResultObjectFrom(XlsToUmapHandler.java:29) ~[classes/:na]
+	at com.lacrobate.converter.XlsToUmapHandler.createResultObjectFrom(XlsToUmapHandler.java:16) ~[classes/:na]
+	at com.lacrobate.converter.XLSHandler.process(XLSHandler.java:34) ~[classes/:na]
+	at com.lacrobate.Main.run(Main.java:27) [classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:804) [spring-boot-2.4.2.jar:2.4.2]
+	... 5 common frames omitted
+
+2021-02-17 09:43:19.561  INFO 3692 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-17 09:47:17.367  INFO 13964 --- [main] com.lacrobate.Main                       : Starting Main using Java 1.8.0_282 on TAL-50WVJR2 with PID 13964 (C:\Users\naoufal\Documents\projects\xls-to-geojson-converter\back-end\target\classes started by naoufal in C:\Users\naoufal\Documents\projects\xls-to-geojson-converter)
+2021-02-17 09:47:17.371  INFO 13964 --- [main] com.lacrobate.Main                       : The following profiles are active: DEV
+2021-02-17 09:47:18.657  INFO 13964 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-17 09:47:18.668  INFO 13964 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-17 09:47:18.668  INFO 13964 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-17 09:47:18.748  INFO 13964 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-17 09:47:18.748  INFO 13964 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1267 ms
+2021-02-17 09:47:18.950  INFO 13964 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-17 09:47:19.179  INFO 13964 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-17 09:47:19.192  INFO 13964 --- [main] com.lacrobate.Main                       : Started Main in 2.489 seconds (JVM running for 2.891)
+2021-02-17 09:47:19.194  INFO 13964 --- [main] com.lacrobate.Main                       : conversion: starting...
+
+2021-02-17 09:47:19.196 ERROR 13964 --- [main] com.lacrobate.converter.XLSHandler       : veuillez vous assurer que le fichier source est bien present dans l'emplacement source
+2021-02-17 09:47:19.196 ERROR 13964 --- [main] com.lacrobate.converter.XLSHandler       : Emplacement source : C:\Users\naoufal\Documents\convertisseur\source\source.xls
+2021-02-17 09:47:19.200  INFO 13964 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-02-17 09:47:19.221 ERROR 13964 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:807) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:788) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:333) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) [spring-boot-2.4.2.jar:2.4.2]
+	at com.lacrobate.Main.main(Main.java:20) [classes/:na]
+Caused by: java.lang.NullPointerException: null
+	at com.lacrobate.converter.XlsToUmapHandler.createLayerMapFrom(XlsToUmapHandler.java:41) ~[classes/:na]
+	at com.lacrobate.converter.XlsToUmapHandler.createResultObjectFrom(XlsToUmapHandler.java:29) ~[classes/:na]
+	at com.lacrobate.converter.XlsToUmapHandler.createResultObjectFrom(XlsToUmapHandler.java:16) ~[classes/:na]
+	at com.lacrobate.converter.XLSHandler.process(XLSHandler.java:34) ~[classes/:na]
+	at com.lacrobate.Main.run(Main.java:27) [classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:804) [spring-boot-2.4.2.jar:2.4.2]
+	... 5 common frames omitted
+
+2021-02-17 09:47:19.386  INFO 13964 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-17 09:51:16.003  INFO 4876 --- [main] com.lacrobate.Main                       : Starting Main using Java 1.8.0_282 on TAL-50WVJR2 with PID 4876 (C:\Users\naoufal\Documents\projects\xls-to-geojson-converter\back-end\target\classes started by naoufal in C:\Users\naoufal\Documents\projects\xls-to-geojson-converter)
+2021-02-17 09:51:16.019  INFO 4876 --- [main] com.lacrobate.Main                       : The following profiles are active: DEV
+2021-02-17 09:51:17.265  INFO 4876 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-17 09:51:17.281  INFO 4876 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-17 09:51:17.281  INFO 4876 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-17 09:51:17.359  INFO 4876 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-17 09:51:17.359  INFO 4876 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1250 ms
+2021-02-17 09:51:17.559  INFO 4876 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-17 09:51:17.782  INFO 4876 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-17 09:51:17.798  INFO 4876 --- [main] com.lacrobate.Main                       : Started Main in 2.439 seconds (JVM running for 2.816)
+2021-02-17 09:51:17.798  INFO 4876 --- [main] com.lacrobate.Main                       : conversion: starting...
+
+2021-02-17 09:51:17.798 ERROR 4876 --- [main] com.lacrobate.converter.XLSHandler       : veuillez vous assurer que le fichier source est bien present dans l'emplacement source
+2021-02-17 09:51:17.798 ERROR 4876 --- [main] com.lacrobate.converter.XLSHandler       : Emplacement source : C:\Users\naoufal\Documents\convertisseur\source\source.xls
+2021-02-17 09:51:17.813  INFO 4876 --- [main] com.lacrobate.converter.XLSHandler       : Umap file generated in: C:\Users\naoufal\Documents\convertisseur\target\target.umap
+2021-02-17 09:51:17.813  INFO 4876 --- [main] com.lacrobate.Main                       : 
 conversion: success.
-2021-02-16 09:43:26.767  INFO 10336 --- [main] com.lacrobate.Main                       : Starting Main using Java 1.8.0_282 on TAL-50WVJR2 with PID 10336 (C:\Users\naoufal\Documents\projects\xls-to-geojson-converter\back-end\target\classes started by naoufal in C:\Users\naoufal\Documents\projects\xls-to-geojson-converter)
-2021-02-16 09:43:26.778  INFO 10336 --- [main] com.lacrobate.Main                       : The following profiles are active: DEV
-2021-02-16 09:43:28.269  INFO 10336 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-02-16 09:43:28.280  INFO 10336 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-02-16 09:43:28.281  INFO 10336 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
-2021-02-16 09:43:28.361  INFO 10336 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-02-16 09:43:28.361  INFO 10336 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1451 ms
-2021-02-16 09:43:28.561  INFO 10336 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-02-16 09:43:28.762  INFO 10336 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-02-16 09:43:28.776  INFO 10336 --- [main] com.lacrobate.Main                       : Started Main in 3.053 seconds (JVM running for 3.553)
-2021-02-16 09:43:28.777  INFO 10336 --- [main] com.lacrobate.Main                       : conversion: starting...
+2021-02-17 09:52:55.504  INFO 2052 --- [main] com.lacrobate.Main                       : Starting Main using Java 1.8.0_282 on TAL-50WVJR2 with PID 2052 (C:\Users\naoufal\Documents\projects\xls-to-geojson-converter\back-end\target\classes started by naoufal in C:\Users\naoufal\Documents\projects\xls-to-geojson-converter)
+2021-02-17 09:52:55.520  INFO 2052 --- [main] com.lacrobate.Main                       : The following profiles are active: DEV
+2021-02-17 09:52:56.924  INFO 2052 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-17 09:52:56.924  INFO 2052 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-17 09:52:56.924  INFO 2052 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-17 09:52:57.008  INFO 2052 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-17 09:52:57.008  INFO 2052 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1372 ms
+2021-02-17 09:52:57.202  INFO 2052 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-17 09:52:57.488  INFO 2052 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-17 09:52:57.510  INFO 2052 --- [main] com.lacrobate.Main                       : Started Main in 2.818 seconds (JVM running for 3.289)
+2021-02-17 09:52:57.510  INFO 2052 --- [main] com.lacrobate.Main                       : conversion: starting...
 
-2021-02-16 09:43:29.029  INFO 10336 --- [main] io.github.millij.poi.util.Spreadsheet    : Bean property to Excel Column of - class com.lacrobate.model.XLSRow : {nom_rubrique=NOM_RUBRIQUE, latitude=LATITUDE, nom_long_station=NOM_LONG_STATION, source=SOURCE, l93_y=L93_Y, type_capteur=TYPE_CAPTEUR, nom_capteur=NOM_CAPTEUR, l93_x=L93_X, id_externe=ID_EXTERNE, id_aghyre=ID_AGHYRE, pk=PK, tring=tring, type_coordonnees=TYPE_COORDONNEES, type_grandeur=TYPE_GRANDEUR, declenchement=DECLENCHEMENT, nom_site=NOM_SITE, longitude=LONGITUDE}
-2021-02-16 09:43:29.030  INFO 10336 --- [main] io.github.millij.poi.util.Spreadsheet    : Excel Column to property map of - class com.lacrobate.model.XLSRow : {ID_EXTERNE=id_externe, TYPE_CAPTEUR=type_capteur, LONGITUDE=longitude, L93_Y=l93_y, TYPE_GRANDEUR=type_grandeur, NOM_LONG_STATION=nom_long_station, TYPE_COORDONNEES=type_coordonnees, NOM_SITE=nom_site, NOM_CAPTEUR=nom_capteur, L93_X=l93_x, ID_AGHYRE=id_aghyre, SOURCE=source, NOM_RUBRIQUE=nom_rubrique, PK=pk, tring=tring, LATITUDE=latitude, DECLENCHEMENT=declenchement}
-2021-02-16 09:43:29.214  INFO 10336 --- [main] c.lacrobate.converter.XlsToUmapHandler   : json object construction finished: 
-2021-02-16 09:43:29.214  INFO 10336 --- [main] c.lacrobate.converter.XlsToUmapHandler   : UmapObject{type='umap', properties=com.lacrobate.model.output.umap.UmapObjectProperties@7519eadb, geometry=com.lacrobate.model.output.common.Geometry@e6c17f20, layers=[com.lacrobate.model.output.umap.Layer@d333b8b5, com.lacrobate.model.output.umap.Layer@649ddeb7, com.lacrobate.model.output.umap.Layer@397f1530, com.lacrobate.model.output.umap.Layer@117911df, com.lacrobate.model.output.umap.Layer@fa82f2e2, com.lacrobate.model.output.umap.Layer@c34191b7, com.lacrobate.model.output.umap.Layer@4b03d4dc, com.lacrobate.model.output.umap.Layer@14eb056b, com.lacrobate.model.output.umap.Layer@b934283a, com.lacrobate.model.output.umap.Layer@5b8a169c, com.lacrobate.model.output.umap.Layer@af2f110e, com.lacrobate.model.output.umap.Layer@17241066, com.lacrobate.model.output.umap.Layer@f841e777, com.lacrobate.model.output.umap.Layer@dfee5b14, com.lacrobate.model.output.umap.Layer@c98b3eb2, com.lacrobate.model.output.umap.Layer@13073e09, com.lacrobate.model.output.umap.Layer@57a627, com.lacrobate.model.output.umap.Layer@31321030, com.lacrobate.model.output.umap.Layer@c0d53643, com.lacrobate.model.output.umap.Layer@cc2ced4e, com.lacrobate.model.output.umap.Layer@8faf10c6, com.lacrobate.model.output.umap.Layer@12a283b1, com.lacrobate.model.output.umap.Layer@487e4333, com.lacrobate.model.output.umap.Layer@f85915e7, com.lacrobate.model.output.umap.Layer@4b58a24a, com.lacrobate.model.output.umap.Layer@70197b1b, com.lacrobate.model.output.umap.Layer@9e2c39a4, com.lacrobate.model.output.umap.Layer@fd7f6a6e, com.lacrobate.model.output.umap.Layer@be185f30, com.lacrobate.model.output.umap.Layer@81632ae5, com.lacrobate.model.output.umap.Layer@2bef67b9, com.lacrobate.model.output.umap.Layer@511c458c, com.lacrobate.model.output.umap.Layer@5e09eb96, com.lacrobate.model.output.umap.Layer@da100ed, com.lacrobate.model.output.umap.Layer@1efb73ad, com.lacrobate.model.output.umap.Layer@792e2eba, com.lacrobate.model.output.umap.Layer@b89b0dac, com.lacrobate.model.output.umap.Layer@de52641, com.lacrobate.model.output.umap.Layer@6b1bbeab, com.lacrobate.model.output.umap.Layer@6649322d, com.lacrobate.model.output.umap.Layer@8c964e99, com.lacrobate.model.output.umap.Layer@dff5bc3a, com.lacrobate.model.output.umap.Layer@b2d9ffd1, com.lacrobate.model.output.umap.Layer@126ba6a3, com.lacrobate.model.output.umap.Layer@62a3e075, com.lacrobate.model.output.umap.Layer@50f12ab2, com.lacrobate.model.output.umap.Layer@758cf29b, com.lacrobate.model.output.umap.Layer@fb9178dd, com.lacrobate.model.output.umap.Layer@29d812b8, com.lacrobate.model.output.umap.Layer@dec3f90, com.lacrobate.model.output.umap.Layer@309e2c36, com.lacrobate.model.output.umap.Layer@bf1ff198, com.lacrobate.model.output.umap.Layer@9f2b723f, com.lacrobate.model.output.umap.Layer@29e4630b, com.lacrobate.model.output.umap.Layer@c698cd03, com.lacrobate.model.output.umap.Layer@971a60ef, com.lacrobate.model.output.umap.Layer@9943d2d2, com.lacrobate.model.output.umap.Layer@5c871516, com.lacrobate.model.output.umap.Layer@590f53c6, com.lacrobate.model.output.umap.Layer@91225664, com.lacrobate.model.output.umap.Layer@1c233723, com.lacrobate.model.output.umap.Layer@35629864, com.lacrobate.model.output.umap.Layer@5515d52e, com.lacrobate.model.output.umap.Layer@e6a58c8, com.lacrobate.model.output.umap.Layer@a03e311b, com.lacrobate.model.output.umap.Layer@ba280af4, com.lacrobate.model.output.umap.Layer@ffe4585f, com.lacrobate.model.output.umap.Layer@ecf1262e, com.lacrobate.model.output.umap.Layer@c2eef35a, com.lacrobate.model.output.umap.Layer@c2a5df59, com.lacrobate.model.output.umap.Layer@1af8df41, com.lacrobate.model.output.umap.Layer@a53b59a3, com.lacrobate.model.output.umap.Layer@c0779dfa, com.lacrobate.model.output.umap.Layer@ce9c08b2, com.lacrobate.model.output.umap.Layer@8e76f55a, com.lacrobate.model.output.umap.Layer@8a31583b, com.lacrobate.model.output.umap.Layer@d3d27e46, com.lacrobate.model.output.umap.Layer@5c0df150, com.lacrobate.model.output.umap.Layer@65a0660f, com.lacrobate.model.output.umap.Layer@f607b529, com.lacrobate.model.output.umap.Layer@8f5fb105, com.lacrobate.model.output.umap.Layer@27edb3b3, com.lacrobate.model.output.umap.Layer@e797419a, com.lacrobate.model.output.umap.Layer@2fcc68f, com.lacrobate.model.output.umap.Layer@97acabdc, com.lacrobate.model.output.umap.Layer@402f7888, com.lacrobate.model.output.umap.Layer@ce048cfd, com.lacrobate.model.output.umap.Layer@a68369b9, com.lacrobate.model.output.umap.Layer@b8fb3c5a, com.lacrobate.model.output.umap.Layer@fcdad4c5, com.lacrobate.model.output.umap.Layer@b6efacba, com.lacrobate.model.output.umap.Layer@5992817b, com.lacrobate.model.output.umap.Layer@3fa3bc3c, com.lacrobate.model.output.umap.Layer@f4f10563, com.lacrobate.model.output.umap.Layer@794965f2, com.lacrobate.model.output.umap.Layer@45faef3f, com.lacrobate.model.output.umap.Layer@8abe0fce, com.lacrobate.model.output.umap.Layer@23b37615, com.lacrobate.model.output.umap.Layer@6d4f3472, com.lacrobate.model.output.umap.Layer@30bf9657, com.lacrobate.model.output.umap.Layer@34624968, com.lacrobate.model.output.umap.Layer@f34c3493, com.lacrobate.model.output.umap.Layer@837fc6b2, com.lacrobate.model.output.umap.Layer@25b882d8, com.lacrobate.model.output.umap.Layer@49b36005, com.lacrobate.model.output.umap.Layer@6b6696fc, com.lacrobate.model.output.umap.Layer@af171348, com.lacrobate.model.output.umap.Layer@a992ff51, com.lacrobate.model.output.umap.Layer@c8da9f19, com.lacrobate.model.output.umap.Layer@d3f7597d, com.lacrobate.model.output.umap.Layer@7b451039, com.lacrobate.model.output.umap.Layer@bc35240, com.lacrobate.model.output.umap.Layer@1b7937ba, com.lacrobate.model.output.umap.Layer@dead477b, com.lacrobate.model.output.umap.Layer@3aeb9549, com.lacrobate.model.output.umap.Layer@8fe32a87, com.lacrobate.model.output.umap.Layer@2ed1490d, com.lacrobate.model.output.umap.Layer@d804291e, com.lacrobate.model.output.umap.Layer@f884d108, com.lacrobate.model.output.umap.Layer@8c642670, com.lacrobate.model.output.umap.Layer@973c8a11, com.lacrobate.model.output.umap.Layer@770bd3d3, com.lacrobate.model.output.umap.Layer@107a2b74, com.lacrobate.model.output.umap.Layer@d4612452, com.lacrobate.model.output.umap.Layer@aca11fe4, com.lacrobate.model.output.umap.Layer@62ecad42, com.lacrobate.model.output.umap.Layer@4783f400, com.lacrobate.model.output.umap.Layer@95e2a590, com.lacrobate.model.output.umap.Layer@8beba316]}
-2021-02-16 09:43:29.215  INFO 10336 --- [main] com.lacrobate.converter.XLSHandler       : writing json object in file: C:\Users\naoufal\Documents\convertisseur\target\target.umap
-2021-02-16 09:43:29.301  INFO 10336 --- [main] com.lacrobate.Main                       : 
+2021-02-17 09:52:57.510 ERROR 2052 --- [main] com.lacrobate.converter.XLSHandler       : veuillez vous assurer que le fichier source est bien present dans l'emplacement source
+2021-02-17 09:52:57.510 ERROR 2052 --- [main] com.lacrobate.converter.XLSHandler       : Emplacement source : C:\Users\naoufal\Documents\convertisseur\source\source.xls
+2021-02-17 09:52:57.510  INFO 2052 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-02-17 09:52:57.541 ERROR 2052 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:807) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:788) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:333) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) [spring-boot-2.4.2.jar:2.4.2]
+	at com.lacrobate.Main.main(Main.java:20) [classes/:na]
+Caused by: java.lang.NullPointerException: null
+	at com.lacrobate.converter.XlsToUmapHandler.createLayerMapFrom(XlsToUmapHandler.java:41) ~[classes/:na]
+	at com.lacrobate.converter.XlsToUmapHandler.createResultObjectFrom(XlsToUmapHandler.java:29) ~[classes/:na]
+	at com.lacrobate.converter.XlsToUmapHandler.createResultObjectFrom(XlsToUmapHandler.java:16) ~[classes/:na]
+	at com.lacrobate.converter.XLSHandler.process(XLSHandler.java:34) ~[classes/:na]
+	at com.lacrobate.Main.run(Main.java:27) [classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:804) [spring-boot-2.4.2.jar:2.4.2]
+	... 5 common frames omitted
+
+2021-02-17 09:52:57.710  INFO 2052 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-17 09:54:19.127  INFO 420 --- [main] com.lacrobate.Main                       : Starting Main using Java 1.8.0_282 on TAL-50WVJR2 with PID 420 (C:\Users\naoufal\Documents\projects\xls-to-geojson-converter\back-end\target\classes started by naoufal in C:\Users\naoufal\Documents\projects\xls-to-geojson-converter)
+2021-02-17 09:54:19.143  INFO 420 --- [main] com.lacrobate.Main                       : The following profiles are active: DEV
+2021-02-17 09:54:20.399  INFO 420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-17 09:54:20.414  INFO 420 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-17 09:54:20.414  INFO 420 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-17 09:54:20.488  INFO 420 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-17 09:54:20.488  INFO 420 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1245 ms
+2021-02-17 09:54:20.684  INFO 420 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-17 09:54:20.900  INFO 420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-17 09:54:20.916  INFO 420 --- [main] com.lacrobate.Main                       : Started Main in 2.496 seconds (JVM running for 2.923)
+2021-02-17 09:54:20.916  INFO 420 --- [main] com.lacrobate.Main                       : conversion: starting...
+
+2021-02-17 09:54:20.916 ERROR 420 --- [main] com.lacrobate.converter.XLSHandler       : veuillez vous assurer que le fichier source est bien present dans l'emplacement source
+2021-02-17 09:54:20.916 ERROR 420 --- [main] com.lacrobate.converter.XLSHandler       : Emplacement source : C:\Users\naoufal\Documents\convertisseur\source\source.xls
+2021-02-17 09:54:20.931  INFO 420 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-02-17 09:54:20.947 ERROR 420 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:807) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:788) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:333) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) [spring-boot-2.4.2.jar:2.4.2]
+	at com.lacrobate.Main.main(Main.java:20) [classes/:na]
+Caused by: java.lang.NullPointerException: null
+	at com.lacrobate.converter.XlsToUmapHandler.createResultObjectFrom(XlsToUmapHandler.java:31) ~[classes/:na]
+	at com.lacrobate.converter.XlsToUmapHandler.createResultObjectFrom(XlsToUmapHandler.java:16) ~[classes/:na]
+	at com.lacrobate.converter.XLSHandler.process(XLSHandler.java:34) ~[classes/:na]
+	at com.lacrobate.Main.run(Main.java:27) [classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:804) [spring-boot-2.4.2.jar:2.4.2]
+	... 5 common frames omitted
+
+2021-02-17 09:54:21.108  INFO 420 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-17 09:55:39.868  INFO 13840 --- [main] com.lacrobate.Main                       : Starting Main using Java 1.8.0_282 on TAL-50WVJR2 with PID 13840 (C:\Users\naoufal\Documents\projects\xls-to-geojson-converter\back-end\target\classes started by naoufal in C:\Users\naoufal\Documents\projects\xls-to-geojson-converter)
+2021-02-17 09:55:39.868  INFO 13840 --- [main] com.lacrobate.Main                       : The following profiles are active: DEV
+2021-02-17 09:55:41.125  INFO 13840 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-17 09:55:41.140  INFO 13840 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-17 09:55:41.140  INFO 13840 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-17 09:55:41.225  INFO 13840 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-17 09:55:41.225  INFO 13840 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1256 ms
+2021-02-17 09:55:41.410  INFO 13840 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-17 09:55:41.610  INFO 13840 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-17 09:55:41.626  INFO 13840 --- [main] com.lacrobate.Main                       : Started Main in 2.436 seconds (JVM running for 2.803)
+2021-02-17 09:55:41.626  INFO 13840 --- [main] com.lacrobate.Main                       : conversion: starting...
+
+2021-02-17 09:55:41.641 ERROR 13840 --- [main] com.lacrobate.converter.XLSHandler       : veuillez vous assurer que le fichier source est bien present dans l'emplacement source
+2021-02-17 09:55:41.641 ERROR 13840 --- [main] com.lacrobate.converter.XLSHandler       : Emplacement source : C:\Users\naoufal\Documents\convertisseur\source\source.xls
+2021-02-17 09:55:41.641  INFO 13840 --- [main] c.lacrobate.converter.XlsToUmapHandler   : json object construction finished: 
+2021-02-17 09:55:41.641  INFO 13840 --- [main] c.lacrobate.converter.XlsToUmapHandler   : UmapObject{type='umap', properties=com.lacrobate.model.output.umap.UmapObjectProperties@60dcbf23, geometry=com.lacrobate.model.output.common.Geometry@ca348dd5, layers=null}
+2021-02-17 09:55:41.688  INFO 13840 --- [main] com.lacrobate.converter.XLSHandler       : Umap file generated in: C:\Users\naoufal\Documents\convertisseur\target\target.umap
+2021-02-17 09:55:41.688  INFO 13840 --- [main] com.lacrobate.Main                       : 
 conversion: success.
-2021-02-16 09:44:38.116  INFO 9700 --- [main] com.lacrobate.Main                       : Starting Main using Java 1.8.0_282 on TAL-50WVJR2 with PID 9700 (C:\Users\naoufal\Documents\projects\xls-to-geojson-converter\back-end\target\classes started by naoufal in C:\Users\naoufal\Documents\projects\xls-to-geojson-converter)
-2021-02-16 09:44:38.134  INFO 9700 --- [main] com.lacrobate.Main                       : The following profiles are active: DEV
-2021-02-16 09:44:41.129  INFO 9700 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-02-16 09:44:41.182  INFO 9700 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-02-16 09:44:41.183  INFO 9700 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
-2021-02-16 09:44:41.544  INFO 9700 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-02-16 09:44:41.545  INFO 9700 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3274 ms
-2021-02-16 09:44:42.210  INFO 9700 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-02-16 09:44:42.868  INFO 9700 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-02-16 09:44:42.899  INFO 9700 --- [main] com.lacrobate.Main                       : Started Main in 5.565 seconds (JVM running for 6.036)
-2021-02-16 09:44:42.902  INFO 9700 --- [main] com.lacrobate.Main                       : conversion: starting...
+2021-02-17 10:04:54.106  INFO 10116 --- [main] com.lacrobate.Main                       : Starting Main using Java 1.8.0_282 on TAL-50WVJR2 with PID 10116 (C:\Users\naoufal\Documents\projects\xls-to-geojson-converter\back-end\target\classes started by naoufal in C:\Users\naoufal\Documents\projects\xls-to-geojson-converter)
+2021-02-17 10:04:54.106  INFO 10116 --- [main] com.lacrobate.Main                       : The following profiles are active: PROD
+2021-02-17 10:04:55.393  INFO 10116 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-17 10:04:55.393  INFO 10116 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-17 10:04:55.393  INFO 10116 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-17 10:04:55.471  INFO 10116 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-17 10:04:55.471  INFO 10116 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1249 ms
+2021-02-17 10:04:55.672  INFO 10116 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-17 10:04:55.894  INFO 10116 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-17 10:04:55.894  INFO 10116 --- [main] com.lacrobate.Main                       : Started Main in 2.442 seconds (JVM running for 2.828)
+2021-02-17 10:04:55.894  INFO 10116 --- [main] com.lacrobate.Main                       : conversion: starting...
 
-2021-02-16 09:44:43.702  INFO 9700 --- [main] io.github.millij.poi.util.Spreadsheet    : Bean property to Excel Column of - class com.lacrobate.model.XLSRow : {nom_rubrique=NOM_RUBRIQUE, latitude=LATITUDE, nom_long_station=NOM_LONG_STATION, source=SOURCE, l93_y=L93_Y, type_capteur=TYPE_CAPTEUR, nom_capteur=NOM_CAPTEUR, l93_x=L93_X, id_externe=ID_EXTERNE, id_aghyre=ID_AGHYRE, pk=PK, tring=tring, type_coordonnees=TYPE_COORDONNEES, type_grandeur=TYPE_GRANDEUR, declenchement=DECLENCHEMENT, nom_site=NOM_SITE, longitude=LONGITUDE}
-2021-02-16 09:44:43.704  INFO 9700 --- [main] io.github.millij.poi.util.Spreadsheet    : Excel Column to property map of - class com.lacrobate.model.XLSRow : {ID_EXTERNE=id_externe, TYPE_CAPTEUR=type_capteur, LONGITUDE=longitude, L93_Y=l93_y, TYPE_GRANDEUR=type_grandeur, NOM_LONG_STATION=nom_long_station, TYPE_COORDONNEES=type_coordonnees, NOM_SITE=nom_site, NOM_CAPTEUR=nom_capteur, L93_X=l93_x, ID_AGHYRE=id_aghyre, SOURCE=source, NOM_RUBRIQUE=nom_rubrique, PK=pk, tring=tring, LATITUDE=latitude, DECLENCHEMENT=declenchement}
-2021-02-16 09:44:44.316  INFO 9700 --- [main] c.lacrobate.converter.XlsToUmapHandler   : json object construction finished: 
-2021-02-16 09:44:44.320  INFO 9700 --- [main] c.lacrobate.converter.XlsToUmapHandler   : UmapObject{type='umap', properties=com.lacrobate.model.output.umap.UmapObjectProperties@49ac69d5, geometry=com.lacrobate.model.output.common.Geometry@bada219, layers=[com.lacrobate.model.output.umap.Layer@cc4e479d, com.lacrobate.model.output.umap.Layer@88574d2, com.lacrobate.model.output.umap.Layer@a68b5871, com.lacrobate.model.output.umap.Layer@98164c93, com.lacrobate.model.output.umap.Layer@f2612c1f, com.lacrobate.model.output.umap.Layer@d34b08ef, com.lacrobate.model.output.umap.Layer@7358b1d1, com.lacrobate.model.output.umap.Layer@250ee9d7, com.lacrobate.model.output.umap.Layer@c6c64d57, com.lacrobate.model.output.umap.Layer@258170bc, com.lacrobate.model.output.umap.Layer@46eadf87, com.lacrobate.model.output.umap.Layer@1fa956d4, com.lacrobate.model.output.umap.Layer@2f4ec062, com.lacrobate.model.output.umap.Layer@9045ad2f, com.lacrobate.model.output.umap.Layer@a91305ae, com.lacrobate.model.output.umap.Layer@9bd50437, com.lacrobate.model.output.umap.Layer@a1b52e92, com.lacrobate.model.output.umap.Layer@bdcd8add, com.lacrobate.model.output.umap.Layer@2d88de29, com.lacrobate.model.output.umap.Layer@f1b2a7b0, com.lacrobate.model.output.umap.Layer@982102c3, com.lacrobate.model.output.umap.Layer@b0cb3422, com.lacrobate.model.output.umap.Layer@6186b055, com.lacrobate.model.output.umap.Layer@90b4e6ed, com.lacrobate.model.output.umap.Layer@68c0366, com.lacrobate.model.output.umap.Layer@e4aecdb2, com.lacrobate.model.output.umap.Layer@f6b4c4c7, com.lacrobate.model.output.umap.Layer@4b47fbeb, com.lacrobate.model.output.umap.Layer@2a7a72c0, com.lacrobate.model.output.umap.Layer@e1f881df, com.lacrobate.model.output.umap.Layer@5403bba9, com.lacrobate.model.output.umap.Layer@a635ccbc, com.lacrobate.model.output.umap.Layer@ca6352b5, com.lacrobate.model.output.umap.Layer@46acf584, com.lacrobate.model.output.umap.Layer@4fe49011, com.lacrobate.model.output.umap.Layer@3c984b17, com.lacrobate.model.output.umap.Layer@8fc4185b, com.lacrobate.model.output.umap.Layer@444dc68e, com.lacrobate.model.output.umap.Layer@403e39e3, com.lacrobate.model.output.umap.Layer@7aaa7bf8, com.lacrobate.model.output.umap.Layer@4fde5897, com.lacrobate.model.output.umap.Layer@f6140b02, com.lacrobate.model.output.umap.Layer@38eb2b5e, com.lacrobate.model.output.umap.Layer@967a26a, com.lacrobate.model.output.umap.Layer@91231e20, com.lacrobate.model.output.umap.Layer@62097425, com.lacrobate.model.output.umap.Layer@6ddcf819, com.lacrobate.model.output.umap.Layer@5bccbbeb, com.lacrobate.model.output.umap.Layer@a995daac, com.lacrobate.model.output.umap.Layer@7ea6692d, com.lacrobate.model.output.umap.Layer@16c04dcd, com.lacrobate.model.output.umap.Layer@1596aa7e, com.lacrobate.model.output.umap.Layer@313d3bad, com.lacrobate.model.output.umap.Layer@e62b095d, com.lacrobate.model.output.umap.Layer@fb59af3a, com.lacrobate.model.output.umap.Layer@b31bf30, com.lacrobate.model.output.umap.Layer@37fbbecb, com.lacrobate.model.output.umap.Layer@3e6ad951, com.lacrobate.model.output.umap.Layer@48bf04d3, com.lacrobate.model.output.umap.Layer@498f8317, com.lacrobate.model.output.umap.Layer@e1b41698, com.lacrobate.model.output.umap.Layer@d38562f5, com.lacrobate.model.output.umap.Layer@efdbcd3f, com.lacrobate.model.output.umap.Layer@7273807c, com.lacrobate.model.output.umap.Layer@aec56686, com.lacrobate.model.output.umap.Layer@22df6b27, com.lacrobate.model.output.umap.Layer@697ea630, com.lacrobate.model.output.umap.Layer@fe07193f, com.lacrobate.model.output.umap.Layer@97ff4b94, com.lacrobate.model.output.umap.Layer@18273f27, com.lacrobate.model.output.umap.Layer@1e9cc099, com.lacrobate.model.output.umap.Layer@e5964aaf, com.lacrobate.model.output.umap.Layer@2b4161ca, com.lacrobate.model.output.umap.Layer@bd72f0b8, com.lacrobate.model.output.umap.Layer@5b6fc8d8, com.lacrobate.model.output.umap.Layer@37b8410, com.lacrobate.model.output.umap.Layer@121fb460, com.lacrobate.model.output.umap.Layer@1ec36545, com.lacrobate.model.output.umap.Layer@7c368114, com.lacrobate.model.output.umap.Layer@d1738eed, com.lacrobate.model.output.umap.Layer@8698c07d, com.lacrobate.model.output.umap.Layer@7f0f550c, com.lacrobate.model.output.umap.Layer@8506868d, com.lacrobate.model.output.umap.Layer@3c69f18f, com.lacrobate.model.output.umap.Layer@9e0e5c4b, com.lacrobate.model.output.umap.Layer@86a20552, com.lacrobate.model.output.umap.Layer@5b320e14, com.lacrobate.model.output.umap.Layer@68f9545d, com.lacrobate.model.output.umap.Layer@aca44f29, com.lacrobate.model.output.umap.Layer@cb2977fe, com.lacrobate.model.output.umap.Layer@1cb31a5d, com.lacrobate.model.output.umap.Layer@5f20010e, com.lacrobate.model.output.umap.Layer@47b4379c, com.lacrobate.model.output.umap.Layer@4715ecee, com.lacrobate.model.output.umap.Layer@c0b4023d, com.lacrobate.model.output.umap.Layer@aafe6075, com.lacrobate.model.output.umap.Layer@364d3296, com.lacrobate.model.output.umap.Layer@980e6725, com.lacrobate.model.output.umap.Layer@ae5c7335, com.lacrobate.model.output.umap.Layer@61138937, com.lacrobate.model.output.umap.Layer@298f6495, com.lacrobate.model.output.umap.Layer@ec7c87df, com.lacrobate.model.output.umap.Layer@180b64bd, com.lacrobate.model.output.umap.Layer@fecebab9, com.lacrobate.model.output.umap.Layer@e6b96f5f, com.lacrobate.model.output.umap.Layer@d4fde6a2, com.lacrobate.model.output.umap.Layer@a6b68f55, com.lacrobate.model.output.umap.Layer@aa550b15, com.lacrobate.model.output.umap.Layer@f14a0679, com.lacrobate.model.output.umap.Layer@65908f12, com.lacrobate.model.output.umap.Layer@d27665e5, com.lacrobate.model.output.umap.Layer@f27e7ff5, com.lacrobate.model.output.umap.Layer@860f0558, com.lacrobate.model.output.umap.Layer@2b731a81, com.lacrobate.model.output.umap.Layer@d51409a2, com.lacrobate.model.output.umap.Layer@d8cedfda, com.lacrobate.model.output.umap.Layer@db8cb173, com.lacrobate.model.output.umap.Layer@d6b23bf6, com.lacrobate.model.output.umap.Layer@cabd6d04, com.lacrobate.model.output.umap.Layer@dfbbbfd7, com.lacrobate.model.output.umap.Layer@22503b77, com.lacrobate.model.output.umap.Layer@446e8048, com.lacrobate.model.output.umap.Layer@8489b5d1, com.lacrobate.model.output.umap.Layer@db7e2870, com.lacrobate.model.output.umap.Layer@564aca7c, com.lacrobate.model.output.umap.Layer@bc4e48b9, com.lacrobate.model.output.umap.Layer@2b960292, com.lacrobate.model.output.umap.Layer@3b2a655c, com.lacrobate.model.output.umap.Layer@f1da872a]}
-2021-02-16 09:44:44.331  INFO 9700 --- [main] com.lacrobate.converter.XLSHandler       : writing json object in file: C:\Users\naoufal\Documents\convertisseur\target\target.umap
-2021-02-16 09:44:44.487  INFO 9700 --- [main] com.lacrobate.Main                       : 
+2021-02-17 10:04:55.894 ERROR 10116 --- [main] com.lacrobate.converter.XLSHandler       : veuillez vous assurer que le fichier source est bien present dans l'emplacement source
+2021-02-17 10:04:55.894 ERROR 10116 --- [main] com.lacrobate.converter.XLSHandler       : Emplacement source : C:\Users\naoufal\Documents\projects\xls-to-geojson-converter\back-end\target\source\source.xls
+2021-02-17 10:04:55.894  INFO 10116 --- [main] com.lacrobate.Main                       : 
 conversion: success.

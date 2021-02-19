@@ -12,8 +12,11 @@ public class XLSRow {
     @SheetColumn("ID_EXTERNE")
     private String id_externe;
 
-    @SheetColumn("SOURCE")
-    private String source;
+    @SheetColumn("NOM_CAPTEUR")
+    private String nom_capteur;
+
+    @SheetColumn("TYPE_CAPTEUR")
+    private String type_capteur;
 
     @SheetColumn("NOM_SITE")
     private String nom_site;
@@ -21,8 +24,6 @@ public class XLSRow {
     @SheetColumn("NOM_LONG_STATION")
     private String nom_long_station;
 
-    @SheetColumn("NOM_CAPTEUR")
-    private String nom_capteur;
 
     @SheetColumn("NOM_RUBRIQUE")
     private String nom_rubrique;
@@ -30,14 +31,6 @@ public class XLSRow {
     @SheetColumn("TYPE_GRANDEUR")
     private String type_grandeur;
 
-    @SheetColumn("DECLENCHEMENT")
-    private String declenchement;
-
-    @SheetColumn("PK")
-    private Float pk;
-
-    @SheetColumn("TYPE_COORDONNEES")
-    private String type_coordonnees;
 
     @SheetColumn("LONGITUDE")
     private Float longitude;
@@ -45,18 +38,9 @@ public class XLSRow {
     @SheetColumn("LATITUDE")
     private Float latitude;
 
-    @SheetColumn("L93_X")
-    private Float l93_x;
+    @SheetColumn("SOURCE")
+    private String source;
 
-    @SheetColumn("L93_Y")
-    private Float l93_y;
-
-    @SheetColumn("TYPE_CAPTEUR")
-    private String type_capteur;
-
-
-    public XLSRow() {
-    }
 
     public Integer getId_aghyre() {
         return id_aghyre;
@@ -122,30 +106,6 @@ public class XLSRow {
         this.type_grandeur = type_grandeur;
     }
 
-    public String getDeclenchement() {
-        return declenchement;
-    }
-
-    public void setDeclenchement(String declenchement) {
-        this.declenchement = declenchement;
-    }
-
-    public Float getPk() {
-        return pk;
-    }
-
-    public void setPk(Float pk) {
-        this.pk = pk;
-    }
-
-    public String getType_coordonnees() {
-        return type_coordonnees;
-    }
-
-    public void setType_coordonnees(String type_coordonnees) {
-        this.type_coordonnees = type_coordonnees;
-    }
-
     public Float getLongitude() {
         return longitude;
     }
@@ -162,22 +122,6 @@ public class XLSRow {
         this.latitude = latitude;
     }
 
-    public Float getL93_x() {
-        return l93_x;
-    }
-
-    public void setL93_x(Float l93_x) {
-        this.l93_x = l93_x;
-    }
-
-    public Float getL93_y() {
-        return l93_y;
-    }
-
-    public void setL93_y(Float l93_y) {
-        this.l93_y = l93_y;
-    }
-
     public String getType_capteur() {
         return type_capteur;
     }
@@ -186,25 +130,21 @@ public class XLSRow {
         this.type_capteur = type_capteur;
     }
 
+
     @Override
     public String toString() {
         return "XLSRow{" +
                 "id_aghyre=" + id_aghyre +
                 ", id_externe='" + id_externe + '\'' +
-                ", source='" + source + '\'' +
+                ", nom_capteur='" + nom_capteur + '\'' +
+                ", type_capteur='" + type_capteur + '\'' +
                 ", nom_site='" + nom_site + '\'' +
                 ", nom_long_station='" + nom_long_station + '\'' +
-                ", nom_capteur='" + nom_capteur + '\'' +
                 ", nom_rubrique='" + nom_rubrique + '\'' +
                 ", type_grandeur='" + type_grandeur + '\'' +
-                ", declenchement='" + declenchement + '\'' +
-                ", pk=" + pk +
-                ", type_coordonnees='" + type_coordonnees + '\'' +
                 ", longitude=" + longitude +
                 ", latitude=" + latitude +
-                ", l93_x=" + l93_x +
-                ", l93_y=" + l93_y +
-                ", type_capteur='" + type_capteur + '\'' +
+                ", source='" + source + '\'' +
                 '}';
     }
 }

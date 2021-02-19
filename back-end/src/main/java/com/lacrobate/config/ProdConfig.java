@@ -1,5 +1,6 @@
 package com.lacrobate.config;
 
+import com.lacrobate.model.Constant;
 import com.lacrobate.utils.ConverterUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,8 +20,15 @@ public class ProdConfig implements AppConfig{
     }
 
     @Override
-    public String getSourcePath() {
-        return this.ROOT_DIRECTORY_PATH + "\\source\\" + ConverterUtils.DEFAULT_SOURCE_FILE_NAME;
+    public String getXlsSourcePath() {
+        return this.ROOT_DIRECTORY_PATH + "\\source\\" + ConverterUtils.DEFAULT_SOURCE_FILE_NAME
+                + Constant.XLS_EXTENSION;
+    }
+
+    @Override
+    public String getXlsxSourcePath() {
+        return this.ROOT_DIRECTORY_PATH + "\\source\\" + ConverterUtils.DEFAULT_SOURCE_FILE_NAME
+                + Constant.XLSX_EXTENSION;
     }
 
     @Override

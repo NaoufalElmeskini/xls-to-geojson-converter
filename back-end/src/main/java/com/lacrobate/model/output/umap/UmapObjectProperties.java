@@ -34,7 +34,7 @@ public class UmapObjectProperties {
                 this.tilelayer = new EmptyObject();
                 this.licence =  "";
                 this.description =  "";
-                this.name =  "capteurs_par_site";
+                this.name =  "Capteurs DTBS_Fev2021";
                 this.displayPopupFooter =  false;
                 this.miniMap =  false;
                 this.moreControl =  true;

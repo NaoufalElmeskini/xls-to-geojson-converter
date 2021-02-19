@@ -5,7 +5,9 @@ import org.springframework.context.annotation.Configuration;
 
 public interface AppConfig {
 
-    public String getSourcePath();
+    String getXlsSourcePath();
 
-    public String getTargetPath();
+    String getXlsxSourcePath();
+
+    String getTargetPath();
 }

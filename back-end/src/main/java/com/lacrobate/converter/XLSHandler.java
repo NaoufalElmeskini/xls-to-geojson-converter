@@ -28,24 +28,35 @@ public abstract class XLSHandler {
     protected AppConfig appConfig;
 
 
-    public void process() {
+    public void process() throws SpreadsheetReadException {
         try {
-            List<XLSRow> rowList = getXlsRowList();
+            List<XLSRow> rowList = getRowListFromSourceFile();
             Object resultObject = createResultObjectFrom(rowList);
             writeJsonFileFrom(resultObject);
+
         } catch (SpreadsheetReadException e) {
-            e.printStackTrace();
-            log.error("veuillez vous assurer que le fichier source est bien present dans l'emplacement source");
-            log.error("Emplacement source : " + appConfig.getSourcePath());
+            log.error("veuillez vous assurer que le fichier source est bien present dans l'emplacement source. noms de fichier acceptés : { source.xls, source.xlsx }");
+            log.error("Emplacement source : " + appConfig.getXlsxSourcePath());
+            throw e;
         }
     }
 
-    protected List<XLSRow> getXlsRowList() throws SpreadsheetReadException {
-        String sourcePath = appConfig.getSourcePath();
-        SpreadsheetReader sheetReader = ConverterUtils.getSpreadsheetReader();
-        File file = new File(sourcePath);
-        List<XLSRow> rowList = null;
-        rowList = sheetReader.read(XLSRow.class, file);
+    protected List<XLSRow> getRowListFromSourceFile() throws SpreadsheetReadException {
+        String sourcePath;
+        try {
+            sourcePath = appConfig.getXlsSourcePath();
+            return getRowListFromFile(sourcePath);
+        } catch (SpreadsheetReadException e) {
+            sourcePath = appConfig.getXlsxSourcePath();
+            return getRowListFromFile(sourcePath);
+        }
+    }
+
+    private List<XLSRow> getRowListFromFile(String filePath) throws SpreadsheetReadException {
+        SpreadsheetReader sheetReader = ConverterUtils.getSpreadsheetReader(filePath);
+        File file = new File(filePath);
+        List<XLSRow> rowList = sheetReader.read(XLSRow.class, file);
+        log.info("extraction de lignes terminée - fichier source : " + filePath);
         return rowList;
     }
 

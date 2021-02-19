@@ -5,35 +5,24 @@ public class Properties {
 
     private String id_externe;
 
-    private String source;
+    private String nom_capteur;
+
+    private String type_capteur;
 
     private String nom_site;
 
     private String nom_long_station;
 
-    private String nom_capteur;
-
     private String nom_rubrique;
 
     private String type_grandeur;
-
-    private String declenchement;
-
-    private Float pk;
-
-    private String type_coordonnees;
 
     private Float longitude;
 
     private Float latitude;
 
-    private Float l93_x;
+    private String source;
 
-    private Float l93_y;
-
-    private String type_capteur;
-
-    public Properties() {}
 
     public Integer getId_aghyre() {
         return id_aghyre;
@@ -99,30 +88,6 @@ public class Properties {
         this.type_grandeur = type_grandeur;
     }
 
-    public String getDeclenchement() {
-        return declenchement;
-    }
-
-    public void setDeclenchement(String declenchement) {
-        this.declenchement = declenchement;
-    }
-
-    public Float getPk() {
-        return pk;
-    }
-
-    public void setPk(Float pk) {
-        this.pk = pk;
-    }
-
-    public String getType_coordonnees() {
-        return type_coordonnees;
-    }
-
-    public void setType_coordonnees(String type_coordonnees) {
-        this.type_coordonnees = type_coordonnees;
-    }
-
     public Float getLongitude() {
         return longitude;
     }
@@ -137,22 +102,6 @@ public class Properties {
 
     public void setLatitude(Float latitude) {
         this.latitude = latitude;
-    }
-
-    public Float getL93_x() {
-        return l93_x;
-    }
-
-    public void setL93_x(Float l93_x) {
-        this.l93_x = l93_x;
-    }
-
-    public Float getL93_y() {
-        return l93_y;
-    }
-
-    public void setL93_y(Float l93_y) {
-        this.l93_y = l93_y;
     }
 
     public String getType_capteur() {
@@ -174,13 +123,8 @@ public class Properties {
                 ", nom_capteur='" + nom_capteur + '\'' +
                 ", nom_rubrique='" + nom_rubrique + '\'' +
                 ", type_grandeur='" + type_grandeur + '\'' +
-                ", declenchement='" + declenchement + '\'' +
-                ", pk=" + pk +
-                ", type_coordonnees='" + type_coordonnees + '\'' +
                 ", longitude=" + longitude +
                 ", latitude=" + latitude +
-                ", l93_x=" + l93_x +
-                ", l93_y=" + l93_y +
                 ", type_capteur='" + type_capteur + '\'' +
                 '}';
     }

@@ -34,5 +34,4 @@ public interface FeatureMapper {
         geometry.setCoordinates(coordinates);
         return geometry;
     }
-
 }

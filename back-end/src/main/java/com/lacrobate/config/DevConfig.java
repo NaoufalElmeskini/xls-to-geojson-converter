@@ -13,8 +13,13 @@ public class DevConfig implements AppConfig{
     private static Logger log = LoggerFactory.getLogger(DevConfig.class);
 
     @Override
-    public String getSourcePath() {
-        return ConverterUtils.getAbsoluteSourceFilePath();
+    public String getXlsSourcePath() {
+        return ConverterUtils.getAbsoluteXlsSourceFilePath();
+    }
+
+    @Override
+    public String getXlsxSourcePath() {
+        return ConverterUtils.getAbsoluteXlsxSourceFilePath();
     }
 
     @Override

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-02-17T10:46:21+0100",
+    date = "2021-02-19T15:42:19+0100",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 1.8.0_282 (AdoptOpenJDK)"
 )
 @Component
@@ -44,13 +44,8 @@ public class FeatureMapperImpl implements FeatureMapper {
         properties.setNom_capteur( xLSRow.getNom_capteur() );
         properties.setNom_rubrique( xLSRow.getNom_rubrique() );
         properties.setType_grandeur( xLSRow.getType_grandeur() );
-        properties.setDeclenchement( xLSRow.getDeclenchement() );
-        properties.setPk( xLSRow.getPk() );
-        properties.setType_coordonnees( xLSRow.getType_coordonnees() );
         properties.setLongitude( xLSRow.getLongitude() );
         properties.setLatitude( xLSRow.getLatitude() );
-        properties.setL93_x( xLSRow.getL93_x() );
-        properties.setL93_y( xLSRow.getL93_y() );
         properties.setType_capteur( xLSRow.getType_capteur() );
 
         return properties;

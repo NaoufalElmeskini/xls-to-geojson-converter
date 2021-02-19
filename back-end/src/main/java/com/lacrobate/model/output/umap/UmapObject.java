@@ -1,5 +1,6 @@
 package com.lacrobate.model.output.umap;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.lacrobate.model.output.common.Geometry;
 
 import java.util.ArrayList;

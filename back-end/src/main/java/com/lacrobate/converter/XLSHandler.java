@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.lacrobate.config.AppConfig;
 import com.lacrobate.mapper.FeatureMapper;
 import com.lacrobate.model.XLSRow;
+import com.lacrobate.model.output.MapObject;
 import com.lacrobate.utils.ConverterUtils;
 import io.github.millij.poi.SpreadsheetReadException;
 import io.github.millij.poi.ss.reader.SpreadsheetReader;
@@ -79,6 +80,6 @@ public abstract class XLSHandler {
         return objectMapper;
     }
 
-    protected abstract Object createResultObjectFrom(List<XLSRow> rowList);
+    protected abstract MapObject createResultObjectFrom(List<XLSRow> rowList);
 
 }

@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class Main implements CommandLineRunner{
-    private Logger log = LoggerFactory.getLogger(Main.class);
+    private Logger LOGGER = LoggerFactory.getLogger(Main.class);
 
     @Autowired
     private XlsToUmapHandler converter;
@@ -23,14 +23,13 @@ public class Main implements CommandLineRunner{
 
     @Override
     public void run(String... args) {
-
-        log.info("conversion: starting...\n");
+        LOGGER.info("conversion: starting...\n");
         try {
             converter.process();
-            log.info("\nconversion: success.");
+            LOGGER.info("\nconversion: success.");
         } catch (SpreadsheetReadException e) {
-            log.error("il semble que des difficultés ont été rencontrées lors du traitement...");
-            log.error("conversion: echec :(");
+            LOGGER.error("il semble que des difficultés ont été rencontrées lors du traitement...");
+            LOGGER.error("conversion: echec.");
         }
     }
 }

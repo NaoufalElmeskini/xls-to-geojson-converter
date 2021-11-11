@@ -13,8 +13,8 @@ public class ConverterUtils {
     public static final String DEFAULT_SOURCE_FILE_NAME = "source";
     public static final String DEFAULT_TARGET_FILE_NAME = "target";
 
-    private static final String ABSOLUTE_SOURCE_DIR_PATH = "C:\\Users\\naoufal\\Documents\\convertisseur\\source\\";
-    private static final String ABSOLUTE_TARGET_DIR_PATH = "C:\\Users\\naoufal\\Documents\\convertisseur\\target\\";
+    private static final String ABSOLUTE_SOURCE_DIR_PATH = "/home/nacrobate/IdeaProjects/xls-to-geojson-converter/back-end/src/main/resources/source/";
+    private static final String ABSOLUTE_TARGET_DIR_PATH = "/home/nacrobate/IdeaProjects/xls-to-geojson-converter/back-end/src/main/resources/target/";
 
 
     public static SpreadsheetReader getSpreadsheetReader(String filePath) throws SpreadsheetReadException {

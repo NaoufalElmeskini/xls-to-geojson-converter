@@ -1,11 +1,12 @@
 package com.lacrobate.model.output.geojson;
 
+import com.lacrobate.model.output.MapObject;
 import com.lacrobate.model.output.common.Feature;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GeoJsonResult {
+public class GeoJsonResult extends MapObject {
     private String type;
     private String name;
 

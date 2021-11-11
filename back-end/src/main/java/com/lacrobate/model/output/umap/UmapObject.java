@@ -1,12 +1,13 @@
 package com.lacrobate.model.output.umap;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.lacrobate.model.output.MapObject;
 import com.lacrobate.model.output.common.Geometry;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class UmapObject {
+public class UmapObject extends MapObject {
     private String type = "umap";
     private UmapObjectProperties properties;
     private Geometry geometry;
